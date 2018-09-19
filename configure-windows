@@ -30,5 +30,5 @@ echo "[configure-windows] Replace prefix path with: $prefix."
 sed -i "s#PREFIX=C:/ocamlmgw64#PREFIX=$prefix#g" config/Makefile
 
 echo "[configure-windows] Setting up flexdll"
-git submodule update --init
+./clone-flexdll
 make flexdll
