@@ -4,9 +4,14 @@
 #
 # Brings in flexdll, if necessary
 
-echo "[Flexdll] Cloning..."
-git clone https://github.com/esy-ocaml/flexdll.git
-cd flexdll
-git checkout 92d4c9e
-cd ..
-echo ["Flexdll] Clone successful!"
+if [ -d "flexdll"]; then
+    echo "[Flexdll] Cloning..."
+    git clone https://github.com/esy-ocaml/flexdll.git
+    cd flexdll
+    git checkout 92d4c9e
+    cd ..
+    echo "[Flexdll] Clone successful!"
+else
+    echo "[Flexdll] Already present, no need to clone."
+endif
+
