@@ -10,7 +10,7 @@ else
     echo "[Flexdll] Cloning..."
     git clone https://github.com/esy-ocaml/flexdll.git
     cd flexdll
-    git checkout 92d4c9e
+    git checkout 2b320fa
     cd ..
     echo "[Flexdll] Clone successful!"
 fi
