@@ -106,6 +106,7 @@ yacc/*.[ch]   ocaml-typo=long-line,very-long-line,unused-prop
 *.run text eol=lf
 
 configure text eol=lf
+configure-windows text eol=lf
 esy-configure text eol=lf
 esy-build text eol=lf
 config/auto-aux/hasgot text eol=lf
