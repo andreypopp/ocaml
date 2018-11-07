@@ -105,6 +105,7 @@ yacc/*.[ch]   ocaml-typo=long-line,very-long-line,unused-prop
 *.check-program-output text eol=lf
 *.run text eol=lf
 
+clone-flexdll text eol=lf
 configure text eol=lf
 configure-windows text eol=lf
 esy-configure text eol=lf
