@@ -103,7 +103,11 @@ yacc/*.[ch]   ocaml-typo=long-line,very-long-line,unused-prop
 *.precheck text eol=lf
 *.runner text eol=lf
 
+clone-flexdll text eol=lf
 configure text eol=lf
+configure-windows text eol=lf
+esy-configure text eol=lf
+esy-build text eol=lf
 config/auto-aux/hasgot text eol=lf
 config/auto-aux/hasgot2 text eol=lf
 config/auto-aux/runtest text eol=lf
