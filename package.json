@@ -42,7 +42,7 @@
     }
   },
   "dependencies": {
-    "flexdll-prebuilt": "^0.37.1"
+    "flexdll-prebuilt": "^0.37.3"
   },
   "repository": {
     "type": "git",
