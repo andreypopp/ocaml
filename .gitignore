@@ -267,3 +267,7 @@ _build
 /yacc/ocamlyacc
 /yacc/version.h
 /yacc/.gdb_history
+
+_esy
+node_modules
+*~
