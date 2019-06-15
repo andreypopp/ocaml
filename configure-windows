@@ -16,19 +16,7 @@ while : ; do
     shift
 done
 
-echo "[configure-windows] Prefix path: $prefix"
-
-echo "[configure-windows] Copying architecture headers."
-cp config/m-nt.h byterun/caml/m.h
-cp config/s-nt.h byterun/caml/s.h
-
-# TODO: Differentiate based on architecture - use 'Makefile.mingw' for 32-bit environments
-echo "[configure-windows] Bringing over mingw64 Makefile."
-cp config/Makefile.mingw64 config/Makefile
-
-echo "[configure-windows] Replace prefix path with: $prefix."
-sed -i "s#PREFIX=C:/ocamlmgw64#PREFIX=$prefix#g" config/Makefile
-
 echo "[configure-windows] Setting up flexdll"
 ./clone-flexdll
+./configure --build=x86_64-unknown-cygwin --host=x86_64-w64-mingw32 --prefix=$prefix
 make flexdll

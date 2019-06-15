@@ -4,7 +4,7 @@
 #
 # Brings in flexdll, if necessary
 
-if [ -d "flexdll" ]; then
+if [ -d "flexdll" ] && [ -f "flexdll/flexdll.c" ]; then
     echo "[Flexdll] Already present, no need to clone."
 else
     echo "[Flexdll] Cloning..."
