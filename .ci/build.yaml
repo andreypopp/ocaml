@@ -8,10 +8,10 @@ jobs:
     pool: ${{ parameters.pool }}
     steps:
       - ${{ if eq(parameters.host, 'Windows') }}:
-          - script: "npm install -g esy@latest --unsafe-perm"
+          - script: "npm install -g esy@0.5.8 --unsafe-perm"
             displayName: "Install esy"
       - ${{ if ne(parameters.host, 'Windows') }}:
-          - script: "sudo npm install -g esy@latest --unsafe-perm"
+          - script: "sudo npm install -g esy@0.5.8 --unsafe-perm"
             displayName: "Install esy"
       - script: esy install
         displayName: "Running esy install and esy build"
