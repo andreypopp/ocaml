@@ -1,3 +1,36 @@
+# OCaml Packaged as an https://github.com/esy/esy/[esy^] dependency.
+
+This is a direct mirror of the official ocaml repo, but with a `package.json`
+that makes it consumable as an `esy` dependency. The version mapping between
+upstream `ocaml` and this package is as follows.
+
+```
+npm_mirror_version =
+  (upstream major version) .
+  (upstream patch version ) .
+  (upstream minor version * 1000 + mirror_fix_count)
+```
+
+[options="header, footer"]
+|=======================================================================================================
+| `ocaml` version  | npm `ocaml` mirror               | If we need to apply fixes to the `npm` mirror 
+| `6.0.0`          | `6.0.0`                          | `6.0.1`, `6.0.2`, etc.                        
+| `6.0.1`          | `6.0.1000`                       | `6.0.1001`, `6.0.1002` etc.                   
+| `6.3.0`          | `6.3.0`                          | `6.3.1,`, `6.3.2`, etc.                       
+| `6.3.1`          | `6.3.1000`                       | `6.3.1001`, `6.3.1002`, etc.                  
+|=======================================================================================================
+
+== Release flow ==
+
+- Make sure the correct version is specified in `package.json`.
+
+- Run `bash clone-flexdll` to make sure `flexdll/` subdirectory contains the
+  correct flexdll version (require for win32).
+
+- Run `npm publish` to publish to npm registry.
+
+** The original README is below: **
+
 |=====
 | Branch `trunk` | Branch `4.05` | Branch `4.04`
 
