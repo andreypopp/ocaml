@@ -14,7 +14,9 @@ jobs:
           - script: "sudo npm install -g esy@0.5.8 --unsafe-perm"
             displayName: "Install esy"
       - script: esy install
-        displayName: "Running esy install and esy build"
+        displayName: "Running esy install"
+      - script: esy build
+        displayName: "Running esy build"
       - bash: |
           PKG=~/foo/esy-ocaml
           APP=~/foo/test-app
