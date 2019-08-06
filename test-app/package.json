@@ -1,0 +1,20 @@
+{
+  "name": "test-ocaml",
+  "version": "0.0.0",
+  "description": "My Project",
+  "esy": {
+    "buildsInSource": true,
+    "build": [
+      "ocamlopt -o #{self.target_dir / 'hello'} hello.ml"
+    ],
+    "install": [
+      "cp #{self.target_dir / 'hello'} #{self.bin}"
+    ]
+  },
+  "dependencies": {
+    "esy-ocaml": "*"
+  },
+  "resolutions": {
+    "esy-ocaml": "link:../esy-ocaml"
+  }
+}
