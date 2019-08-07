@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "My Project",
   "esy": {
+    "buildsInSource": true,
     "build": [
       "ocamlopt -o #{self.target_dir / 'hello'} hello.ml"
     ],
