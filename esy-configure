@@ -22,8 +22,20 @@ case "$(uname -s)" in
         echo "[esy-configure] Detected windows environment..."
         ./configure-windows "$@"
         ;;
+    Linux)
+        echo "[esy-configure] Detected Linux environment"
+	VERSION_NEEDED_TO_PATCH="10"
+	set +e # because on platforms that use clang, it's okay if the following statement fails
+	MAJOR_VERSION=$(gcc -dumpversion | awk -F. '{ print $1 }' )
+	if [ $MAJOR_VERSION -ge $VERSION_NEEDED_TO_PATCH ]; then
+	  ./configure "$@" CC="gcc -fcommon"
+	else
+	  ./configure "$@"
+	fi
+	set -e
+	;;
     *)
-        echo "[esy-configure] Detected OSX / Linux environment"
-        ./configure "$@"
-        ;;
+        echo "[esy-configure] Detected non-Linux (most likely MacOS) environment"
+	./configure "$@"
+	;;
 esac
