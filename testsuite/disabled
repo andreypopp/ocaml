@@ -70,3 +70,16 @@ tool-debugger
 
 # since promotion is based on minor heap size now, this test can no longer be correct
 tests/promotion/bigrecmod.ml
+
+# Effects syntax has been removed
+effects
+tests/parallel/'mctest.ml' with 1.1 (bytecode)
+tests/parallel/'mctest.ml' with 1.2 (native)
+tests/callback/'stack_overflow.ml' with 1.2 (native)
+tests/callback/'nested_fiber.ml' with 1.1 (bytecode)
+tests/parallel/'deadcont.ml' with 1.2 (native)
+tests/parallel/'deadcont.ml' with 1.1 (bytecode)
+tests/callback/'test7.ml' with 1.1 (bytecode)
+tests/callback/'stack_overflow.ml' with 1.1 (bytecode)
+tests/callback/'test7.ml' with 1.2 (native)
+tests/callback/'nested_fiber.ml' with 1.2 (native)
