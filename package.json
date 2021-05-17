@@ -1,0 +1,44 @@
+{
+  "name": "ocaml",
+  "version": "4.12.0",
+  "description": "OCaml Compiler as an esy npm Package",
+  "versionNotes": [
+    "See the README for notes about how the version of this package corresponds to the official OCaml compiler version."
+  ],
+  "esy": {
+    "build": [
+      "./esy-configure --prefix $cur__install",
+      "./esy-build"
+    ],
+    "buildsInSource": true,
+    "exportedEnv": {
+      "OCAMLLIB": {
+        "val": "#{ocaml.lib / 'ocaml'}",
+        "scope": "global"
+      },
+      "CAML_LD_LIBRARY_PATH": {
+        "val": "#{ocaml.lib / 'ocaml' / 'stublibs' : ocaml.lib / 'ocaml' : $CAML_LD_LIBRARY_PATH}",
+        "scope": "global"
+      },
+      "OCAML_TOPLEVEL_PATH": {
+        "val": "#{ocaml.lib / 'ocaml'}",
+        "scope": "global"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/esy-ocaml/ocaml.git"
+  },
+  "keywords": [
+    "ocaml",
+    "flow",
+    "opam"
+  ],
+  "author": "",
+  "license": "QPL - See LICENSE at https://github.com/ocaml/ocaml",
+  "bugs": {
+    "url": "https://github.com/esy-ocaml/ocaml/issues"
+  },
+  "homepage": "https://github.com/esy-ocaml/ocaml#readme"
+}
